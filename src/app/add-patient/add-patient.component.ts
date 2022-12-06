@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AddPatientComponent {
 name=""
-id=""
+pid=""
 address=""
 contact=""
 doa=""
@@ -16,7 +16,7 @@ dname=""
 
 readValue=()=>
 {
-  let data:any={"name":this.name,"id":this.id,"address":this.address,"contact":this.contact,"doa":this.doa,"image":this.image,
+  let data:any={"name":this.name,"pid":this.pid,"address":this.address,"contact":this.contact,"doa":this.doa,"image":this.image,
   "dname":this.dname}
   console.log(data)
 }
