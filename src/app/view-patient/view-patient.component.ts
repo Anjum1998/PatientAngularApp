@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-view-patient',
@@ -6,6 +7,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./view-patient.component.css']
 })
 export class ViewPatientComponent {
+  constructor(private api:ApiService){
+    api.fetchPatient().subscribe(
+      (response)=>
+      {
+        this.data=response
+      }
+    )
+  }
 
-   data:any=[{"name": "John","id": 1,"image":"https://d38b044pevnwc9.cloudfront.net/cutout-nuxt/passport/1-change.jpg","doa":"2020-11-23"},{"name": "John","id": 1,"image":"https://d38b044pevnwc9.cloudfront.net/cutout-nuxt/passport/1-change.jpg"},{"name": "John","id": 1,"image":"https://d38b044pevnwc9.cloudfront.net/cutout-nuxt/passport/1-change.jpg"},{"name": "John","id": 1,"image":"https://d38b044pevnwc9.cloudfront.net/cutout-nuxt/passport/1-change.jpg"}]
+   data:any=[]
 }
