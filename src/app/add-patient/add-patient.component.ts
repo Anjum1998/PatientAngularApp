@@ -23,9 +23,22 @@ readValue=()=>
   "dname":this.dname}
   console.log(data)
   this.api.addPatient(data).subscribe(
-    (response)=>
+    (response:any)=>
     {
       console.log(response)
+      if (response.status=="success") {
+        alert("patient added successfully")
+        this.name=""
+        this.address=""
+        this.contact=""
+        this.dname=""
+        this.doa=""
+        this.pid=""
+        this.image=""
+      } else {
+        alert("something went wrong")
+      }
+      
       
     }
   )
